@@ -349,7 +349,7 @@ buttons = [
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 60, 60), bg='directions',  cb=valuesCallback, value=4)],
+   Button((200,180, 60, 60), bg='directions',  cb=valuesCallback, value=4)],
 
   # Screen 2 for numeric input
   [Button((  0,  0,320, 60), bg='box'),
