@@ -223,7 +223,7 @@ def valuesCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 	elif n == 4:
 		dict_idx='Directions'
 		numberstring = str(v[dict_idx])
-		screenMode = 2
+		screenMode = 3
 		returnScreen = 1
 
 def viewCallback(n): # Viewfinder buttons
@@ -345,11 +345,12 @@ buttons = [
    Button((195,180,120, 60), bg='stop',  cb=startCallback, value=0)],
 
   # Screen 1 for changing values and setting motor direction
-  [Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
+	[Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((200,180, 60, 60), bg='directions',  cb=valuesCallback, value=4)],
+   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=3),
+   Button((230,180, 70, 60), bg='right', cb=motorCallback, value=4)],
 
   # Screen 2 for numeric input
   [Button((  0,  0,320, 60), bg='box'),
@@ -368,19 +369,10 @@ buttons = [
    Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)],
    
    # Screen 3 for setting motor direction
-  [Button((180,120, 60, 60), bg='left',     cb=numericCallback, value=0),
-   Button((  0,180, 60, 60), bg='right',     cb=numericCallback, value=1),
-   Button((120,180, 60, 60), bg='up',     cb=numericCallback, value=3),
-   Button(( 60,180, 60, 60), bg='down',     cb=numericCallback, value=2),
-   Button((  0,120, 60, 60), bg='4',     cb=numericCallback, value=4),
-   Button(( 60,120, 60, 60), bg='5',     cb=numericCallback, value=5),
-   Button((120,120, 60, 60), bg='6',     cb=numericCallback, value=6),
-   Button((  0, 60, 60, 60), bg='7',     cb=numericCallback, value=7),
-   Button(( 60, 60, 60, 60), bg='8',     cb=numericCallback, value=8),
-   Button((120, 60, 60, 60), bg='9',     cb=numericCallback, value=9),
-   Button((240,120, 80, 60), bg='del',   cb=numericCallback, value=10),
-   Button((180,180,140, 60), bg='ok',    cb=numericCallback, value=12),
-   Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)]
+  [Button((180,120, 60, 60), bg='left',     cb=motorCallback, value=1),
+   Button((  0,180, 60, 60), bg='right',     cb=motorCallback, value=2),
+   Button((120,180, 60, 60), bg='up',     cb=motorCallback, value=3),
+   Button(( 60,180, 60, 60), bg='down',     cb=motorCallback, value=4)]
 ]
 
 
