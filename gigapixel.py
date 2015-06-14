@@ -368,7 +368,7 @@ buttons = [
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
    Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=1),
-   Button((230,180, 70, 60), bg='right', cb=motorCallback, value=2)],
+   Button((230,180, 70, 60), bg='right', cb=motorCallback, value=2)]
 ]
 
 
