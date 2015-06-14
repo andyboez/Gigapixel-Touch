@@ -128,7 +128,7 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 	
 	if n == 1:
 		motorDirection = 1
-		motorpin = motorpinC
+		motorpin = motorpinA
 		if motorRunning == 0:
 			motorRunning = 1
 			gpio.digitalWrite(motorpin,gpio.HIGH)
@@ -140,7 +140,7 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
 	elif n == 2:
 		motorDirection = 0
-		motorpin = motorpinD
+		motorpin = motorpinB
 		if motorRunning == 0:
 			motorRunning = 1
 			gpio.digitalWrite(motorpin,gpio.HIGH)
@@ -314,8 +314,8 @@ returnScreen   = 0
 shutterpin     = 17
 motorpinA      = 18
 motorpinB      = 27
-motorpinC      = 22
-motorpinD      = 23
+motorpinC      = 14
+motorpinD      = 15
 motorpin       = motorpinA
 backlightpin   = 252
 currentframe   = 0
