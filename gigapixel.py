@@ -365,10 +365,22 @@ buttons = [
    Button((120, 60, 60, 60), bg='9',     cb=numericCallback, value=9),
    Button((240,120, 80, 60), bg='del',   cb=numericCallback, value=10),
    Button((180,180,140, 60), bg='ok',    cb=numericCallback, value=12),
-   Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)]
+   Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)],
    
    # Screen 3 for setting motor direction
-  
+  [Button((180,120, 60, 60), bg='left',     cb=numericCallback, value=0),
+   Button((  0,180, 60, 60), bg='right',     cb=numericCallback, value=1),
+   Button((120,180, 60, 60), bg='up',     cb=numericCallback, value=3),
+   Button(( 60,180, 60, 60), bg='down',     cb=numericCallback, value=2),
+   Button((  0,120, 60, 60), bg='4',     cb=numericCallback, value=4),
+   Button(( 60,120, 60, 60), bg='5',     cb=numericCallback, value=5),
+   Button((120,120, 60, 60), bg='6',     cb=numericCallback, value=6),
+   Button((  0, 60, 60, 60), bg='7',     cb=numericCallback, value=7),
+   Button(( 60, 60, 60, 60), bg='8',     cb=numericCallback, value=8),
+   Button((120, 60, 60, 60), bg='9',     cb=numericCallback, value=9),
+   Button((240,120, 80, 60), bg='del',   cb=numericCallback, value=10),
+   Button((180,180,140, 60), bg='ok',    cb=numericCallback, value=12),
+   Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)]
 ]
 
 
