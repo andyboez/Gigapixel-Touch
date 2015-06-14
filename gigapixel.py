@@ -158,8 +158,8 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpin,gpio.HIGH)
 		else:
 			motorRunning = 0
-			gpio.digitalWrite(motorpinC,gpio.LOW)
-			gpio.digitalWrite(motorpinD,gpio.LOW)
+			gpio.digitalWrite(motorpinA,gpio.LOW)
+			gpio.digitalWrite(motorpinB,gpio.LOW)
 			gpio.digitalWrite(motorpinC,gpio.LOW)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
 	elif n == 4:
@@ -170,10 +170,11 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpin,gpio.HIGH)
 		else:
 			motorRunning = 0
+			gpio.digitalWrite(motorpinA,gpio.LOW)
+			gpio.digitalWrite(motorpinB,gpio.LOW)
 			gpio.digitalWrite(motorpinC,gpio.LOW)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
-			gpio.digitalWrite(motorpinC,gpio.LOW)
-			gpio.digitalWrite(motorpinD,gpio.LOW)
+
 def numericCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 	global screenMode
 	global numberstring
@@ -349,7 +350,7 @@ buttons = [
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=3),
+   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=1),
    Button((230,180, 70, 60), bg='right', cb=motorCallback, value=4)],
 
   # Screen 2 for numeric input
