@@ -162,7 +162,7 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
 			gpio.digitalWrite(motorpinC,gpio.LOW)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
-			elif n == 4:
+	elif n == 4:
 		motorDirection = 0
 		motorpin = motorpinD
 		if motorRunning == 0:
@@ -217,6 +217,11 @@ def valuesCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 		returnScreen = 1
 	elif n == 3:
 		dict_idx='Images'
+		numberstring = str(v[dict_idx])
+		screenMode = 2
+		returnScreen = 1
+	elif n == 4:
+		dict_idx='Directions'
 		numberstring = str(v[dict_idx])
 		screenMode = 2
 		returnScreen = 1
@@ -344,7 +349,7 @@ buttons = [
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 60, 60), bg='directions',  cb=motorCallback, value=1)],
+   Button((160,180, 60, 60), bg='directions',  cb=valuesCallback, value=4)],
 
   # Screen 2 for numeric input
   [Button((  0,  0,320, 60), bg='box'),
@@ -363,12 +368,7 @@ buttons = [
    Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)]
    
    # Screen 3 for setting motor direction
-  [Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
-   Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
-   Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
-   Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=1),
-   Button((230,180, 70, 60), bg='right', cb=motorCallback, value=2)],
+  
 ]
 
 
