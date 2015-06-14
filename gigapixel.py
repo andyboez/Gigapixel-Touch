@@ -371,8 +371,8 @@ buttons = [
    # Screen 3 for setting motor direction
   [Button((180,120, 60, 60), bg='left',     cb=motorCallback, value=1),
    Button((  0,180, 60, 60), bg='right',     cb=motorCallback, value=2),
-   Button((120,180, 60, 60), bg='up',     cb=motorCallback, value=3),
-   Button(( 60,180, 60, 60), bg='down',     cb=motorCallback, value=4)]
+   Button((120,180, 60, 60), bg='up',     cb=motorCallback, value=1),
+   Button(( 60,180, 60, 60), bg='down',     cb=motorCallback, value=2)]
 ]
 
 
