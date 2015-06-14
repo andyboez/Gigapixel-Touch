@@ -368,11 +368,7 @@ buttons = [
    Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)]
    
    # Screen 3 for setting motor direction
-  [Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
-   Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
-   Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
-   Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=1)]
+  
 ]
 
 
