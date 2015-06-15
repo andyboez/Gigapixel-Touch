@@ -364,10 +364,10 @@ buttons = [
    Button((180, 60,140, 60), bg='cancel',cb=numericCallback, value=11)],
    
    # Screen 3 for setting motor direction
-  [Button((180,120, 60, 60), bg='left',     cb=motorCallback, value=1),
-   Button((  0,180, 60, 60), bg='right',     cb=motorCallback, value=2),
-   Button((120,180, 60, 60), bg='up',     cb=motorCallback, value=1),
-   Button(( 60,180, 60, 60), bg='down',     cb=motorCallback, value=2)]
+  [Button((60, 70, 60, 60), bg='up',     cb=motorCallback, value=3),
+   Button((0, 130, 60, 60), bg='left',     cb=motorCallback, value=1),
+   Button((120, 130, 60, 60), bg='right',     cb=motorCallback, value=2),
+   Button(( 60, 190, 60, 60), bg='down',     cb=motorCallback, value=4)]
 ]
 
 
@@ -498,6 +498,10 @@ while(True):
   # Overlay buttons on display and update
   for i,b in enumerate(buttons[screenMode]):
     b.draw(screen)
+  if screenMode == 3:
+    myfont = pygame.font.SysFont("Arial", 50)
+    label = myfont.render(numberstring, 1, (255,255,255))
+    screen.blit(label, (10, 2))
   if screenMode == 2:
     myfont = pygame.font.SysFont("Arial", 50)
     label = myfont.render(numberstring, 1, (255,255,255))
