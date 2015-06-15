@@ -147,7 +147,7 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpinA,gpio.LOW)
 			gpio.digitalWrite(motorpinB,gpio.LOW)
 	elif n == 3:
-		motorDirection = 0
+		motorDirection = 1
 		motorpin = motorpinC
 		if motorRunning == 0:
 			motorRunning = 1
