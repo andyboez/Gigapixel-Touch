@@ -482,6 +482,8 @@ while(True):
         motorRunning = 0
         gpio.digitalWrite(motorpinA,gpio.LOW)
         gpio.digitalWrite(motorpinB,gpio.LOW)
+		gpio.digitalWrite(motorpinC,gpio.LOW)
+		gpio.digitalWrite(motorpinD,gpio.LOW)
 
     if screenMode >= 0 or screenMode != screenModePrior: break
 
