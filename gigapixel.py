@@ -215,7 +215,7 @@ def valuesCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 		returnScreen = 1
 	elif n == 4:
 		dict_idx='Directions'
-		numberstring = str(v[dict_idx])
+		
 		screenMode = 3
 		returnScreen = 1
 
