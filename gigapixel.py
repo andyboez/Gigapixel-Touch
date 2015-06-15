@@ -136,8 +136,6 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			motorRunning = 0
 			gpio.digitalWrite(motorpinA,gpio.LOW)
 			gpio.digitalWrite(motorpinB,gpio.LOW)
-			gpio.digitalWrite(motorpinC,gpio.LOW)
-			gpio.digitalWrite(motorpinD,gpio.LOW)
 	elif n == 2:
 		motorDirection = 0
 		motorpin = motorpinB
@@ -148,8 +146,6 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			motorRunning = 0
 			gpio.digitalWrite(motorpinA,gpio.LOW)
 			gpio.digitalWrite(motorpinB,gpio.LOW)
-			gpio.digitalWrite(motorpinC,gpio.LOW)
-			gpio.digitalWrite(motorpinD,gpio.LOW)
 	elif n == 3:
 		motorDirection = 0
 		motorpin = motorpinC
@@ -158,8 +154,6 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpin,gpio.HIGH)
 		else:
 			motorRunning = 0
-			gpio.digitalWrite(motorpinA,gpio.LOW)
-			gpio.digitalWrite(motorpinB,gpio.LOW)
 			gpio.digitalWrite(motorpinC,gpio.LOW)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
 	elif n == 4:
@@ -170,8 +164,6 @@ def motorCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 			gpio.digitalWrite(motorpin,gpio.HIGH)
 		else:
 			motorRunning = 0
-			gpio.digitalWrite(motorpinA,gpio.LOW)
-			gpio.digitalWrite(motorpinB,gpio.LOW)
 			gpio.digitalWrite(motorpinC,gpio.LOW)
 			gpio.digitalWrite(motorpinD,gpio.LOW)
 
@@ -350,8 +342,10 @@ buttons = [
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,180, 70, 60), bg='left',  cb=motorCallback, value=1),
-   Button((230,180, 70, 60), bg='right', cb=motorCallback, value=3)],
+   Button((160,120, 70, 60), bg='left',  cb=motorCallback, value=1),
+   Button((230,120, 70, 60), bg='right',  cb=motorCallback, value=2),
+   Button((160,180, 70, 60), bg='up',  cb=motorCallback, value=3),
+   Button((230,180, 70, 60), bg='down', cb=motorCallback, value=4)],
 
   # Screen 2 for numeric input
   [Button((  0,  0,320, 60), bg='box'),
