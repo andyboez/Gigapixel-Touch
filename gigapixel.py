@@ -215,7 +215,6 @@ def valuesCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 		returnScreen = 1
 	elif n == 4:
 		dict_idx='Directions'
-		
 		screenMode = 3
 		returnScreen = 1
 
@@ -362,8 +361,8 @@ buttons = [
    
    # Screen 3 for setting motor direction
   [Button((60, 60, 60, 60), bg='up',     cb=motorCallback, value=3),
-   Button((0, 120, 60, 60), bg='left',     cb=motorCallback, value=1),
-   Button((120, 120, 60, 60), bg='right',     cb=motorCallback, value=2),
+   Button((0, 120, 60, 60), bg='left',     cb=motorCallback, value=2),
+   Button((120, 120, 60, 60), bg='right',     cb=motorCallback, value=1),
    Button(( 60, 180, 60, 60), bg='down',     cb=motorCallback, value=4),
    Button((120,180,140, 60), bg='ok',    cb=numericCallback, value=12)]
 ]
@@ -498,7 +497,7 @@ while(True):
     b.draw(screen)
   if screenMode == 3:
     myfont = pygame.font.SysFont("Arial", 50)
-    label = myfont.render(numberstring, 1, (255,255,255))
+    label = myfont.render("Directions", 1, (255,255,255))
     screen.blit(label, (10, 2))
   if screenMode == 2:
     myfont = pygame.font.SysFont("Arial", 50)
