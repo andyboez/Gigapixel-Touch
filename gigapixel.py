@@ -342,10 +342,7 @@ buttons = [
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
-   Button((160,120, 70, 60), bg='left',  cb=motorCallback, value=1),
-   Button((230,120, 70, 60), bg='right',  cb=motorCallback, value=2),
-   Button((160,180, 70, 60), bg='up',  cb=motorCallback, value=3),
-   Button((230,180, 70, 60), bg='down', cb=motorCallback, value=4)],
+   Button((160,120, 70, 60), bg='directions',  cb=motorCallback, value=1)],
 
   # Screen 2 for numeric input
   [Button((  0,  0,320, 60), bg='box'),
@@ -367,7 +364,8 @@ buttons = [
   [Button((60, 70, 60, 60), bg='up',     cb=motorCallback, value=3),
    Button((0, 130, 60, 60), bg='left',     cb=motorCallback, value=1),
    Button((120, 130, 60, 60), bg='right',     cb=motorCallback, value=2),
-   Button(( 60, 190, 60, 60), bg='down',     cb=motorCallback, value=4)]
+   Button(( 60, 190, 60, 60), bg='down',     cb=motorCallback, value=4),
+   Button((120,250,140, 60), bg='ok',    cb=numericCallback, value=12)]
 ]
 
 
