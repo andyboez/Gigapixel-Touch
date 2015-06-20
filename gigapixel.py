@@ -536,6 +536,8 @@ while(True):
     screen.blit(label, (160, 50))
     label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
     screen.blit(label, (160, 90))
+    label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
+    screen.blit(label, (160, 130))
 
     #intervalLength = float((v['Pulse'] + v['Interval'] + (settling_time*1000) + (shutter_length*1000)))
     #remaining = float((intervalLength * (v['Images'] - currentframe)) / 1000)
