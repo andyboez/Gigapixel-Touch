@@ -509,7 +509,7 @@ while(True):
     screen.blit(label, (10, 10))
     label = myfont.render("Interval:" , 1, (255,255,255))
     screen.blit(label, (10, 70))
-    label = myfont.render("Frames:" , 1, (255,255,255))
+    label = myfont.render("Columns:" , 1, (255,255,255))
     screen.blit(label, (10,130))
 
     label = myfont.render(str(v['Pulse']) + "ms" , 1, (255,255,255))
@@ -525,9 +525,9 @@ while(True):
     screen.blit(label, (10, 10))
     label = myfont.render("Interval:" , 1, (255,255,255))
     screen.blit(label, (10, 50))
-    label = myfont.render("Frames:" , 1, (255,255,255))
+    label = myfont.render("Columns:" , 1, (255,255,255))
     screen.blit(label, (10, 90))
-    label = myfont.render("Remaining:" , 1, (255,255,255))
+    label = myfont.render("Rows:" , 1, (255,255,255))
     screen.blit(label, (10,130))
 
     label = myfont.render(str(v['Pulse']) + "ms" , 1, (255,255,255))
@@ -537,14 +537,14 @@ while(True):
     label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
     screen.blit(label, (160, 90))
 
-    intervalLength = float((v['Pulse'] + v['Interval'] + (settling_time*1000) + (shutter_length*1000)))
-    remaining = float((intervalLength * (v['Images'] - currentframe)) / 1000)
-    sec = timedelta(seconds=int(remaining))
-    d = datetime(1,1,1) + sec
-    remainingStr = "%dh%dm%ds" % (d.hour, d.minute, d.second)
+    #intervalLength = float((v['Pulse'] + v['Interval'] + (settling_time*1000) + (shutter_length*1000)))
+    #remaining = float((intervalLength * (v['Images'] - currentframe)) / 1000)
+    #sec = timedelta(seconds=int(remaining))
+    #d = datetime(1,1,1) + sec
+    #remainingStr = "%dh%dm%ds" % (d.hour, d.minute, d.second)
 
-    label = myfont.render(remainingStr , 1, (255,255,255))
-    screen.blit(label, (160, 130))
+    #label = myfont.render(remainingStr , 1, (255,255,255))
+    #screen.blit(label, (160, 130))
   pygame.display.update()
 
   screenModePrior = screenMode
