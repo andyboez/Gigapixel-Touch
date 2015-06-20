@@ -217,6 +217,11 @@ def valuesCallback(n): # Pass 1 (next setting) or -1 (prev setting)
 		dict_idx='Directions'
 		screenMode = 3
 		returnScreen = 1
+	elif n == 5:
+		dict_idx='Rows'
+		numberstring = str(v[dict_idx])
+		screenMode = 2
+		returnScreen = 1
 
 def viewCallback(n): # Viewfinder buttons
 	global screenMode, screenModePrior
@@ -340,6 +345,7 @@ buttons = [
 	[Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
    Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
    Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
+   Button((200,180, 60, 60), bg='cog',   cb=valuesCallback, value=5),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
    Button((160,180, 160, 60), bg='directions',  cb=valuesCallback, value=4)],
 
