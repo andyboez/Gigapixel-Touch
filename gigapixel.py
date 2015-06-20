@@ -517,6 +517,8 @@ while(True):
     screen.blit(label, (10, 70))
     label = myfont.render("Columns:" , 1, (255,255,255))
     screen.blit(label, (10,130))
+    label = myfont.render("Rows:" , 1, (255,255,255))
+    screen.blit(label, (10,190))
 
     label = myfont.render(str(v['Pulse']) + "ms" , 1, (255,255,255))
     screen.blit(label, (130, 10))
@@ -524,6 +526,8 @@ while(True):
     screen.blit(label, (130, 70))
     label = myfont.render(str(v['Images']) , 1, (255,255,255))
     screen.blit(label, (130,130))
+    label = myfont.render(str(v['Rows']) , 1, (255,255,255))
+    screen.blit(label, (130,190))
 
   if screenMode == 0:
     myfont = pygame.font.SysFont("Arial", 30)
@@ -542,7 +546,7 @@ while(True):
     screen.blit(label, (160, 50))
     label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
     screen.blit(label, (160, 90))
-    label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
+    label = myfont.render(str(currentframe) + " of " + str(v['Rows']) , 1, (255,255,255))
     screen.blit(label, (160, 130))
 
     #intervalLength = float((v['Pulse'] + v['Interval'] + (settling_time*1000) + (shutter_length*1000)))
