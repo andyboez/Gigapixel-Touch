@@ -343,10 +343,10 @@ buttons = [
    Button((195,180,120, 60), bg='stop',  cb=startCallback, value=0)],
 
   # Screen 1 for changing values and setting motor direction
-	[Button((260,  0, 60, 60), bg='cog',   cb=valuesCallback, value=1),
-   Button((260, 60, 60, 60), bg='cog',   cb=valuesCallback, value=2),
-   Button((260,120, 60, 60), bg='cog',   cb=valuesCallback, value=3),
-   Button((200,180, 60, 60), bg='cog',   cb=valuesCallback, value=5),
+	[Button((280,  0, 40, 40), bg='cogsmall',   cb=valuesCallback, value=1),
+   Button((280, 40, 40, 40), bg='cogsmall',   cb=valuesCallback, value=2),
+   Button((280,80, 40, 40), bg='cogsmall',   cb=valuesCallback, value=3),
+   Button((280,120, 40, 40), bg='cogsmall',   cb=valuesCallback, value=5),
    Button((  0,180,160, 60), bg='ok',    cb=valuesCallback, value=-1),
    Button((160,180, 160, 60), bg='directions',  cb=valuesCallback, value=4)],
 
