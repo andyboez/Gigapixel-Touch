@@ -322,7 +322,8 @@ interval_delay = 0.2
 dict_idx	   = "Interval"
 v = { "Pulse": 100,
 	"Interval": 3000,
-	"Images": 150}
+	"Images": 150,
+	"Rows": 3}
 
 icons = [] # This list gets populated at startup
 
