@@ -325,6 +325,7 @@ motorpinD      = 23
 motorpin       = motorpinA
 backlightpin   = 252
 currentframe   = 0
+currentrow     = 0
 framecount     = 100
 settling_time  = 0.2
 shutter_length = 0.2
