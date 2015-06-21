@@ -267,6 +267,16 @@ def timeLapse():
 	busy = True
 	for j in range(1, v['Rows'] + 1 ):
 		currentrow = j
+		# disable the backlight, critical for night timelapses, also saves power
+		os.system("echo '0' > /sys/class/gpio/gpio252/value")
+		gpio.digitalWrite(shutterpin,gpio.HIGH)
+		sleep(shutter_length)
+		gpio.digitalWrite(shutterpin,gpio.LOW)
+		#  enable the backlight
+		os.system("echo '1' > /sys/class/gpio/gpio252/value")
+		interval = float(v['Interval'])/1000.0
+		if (interval > shutter_length):
+			sleep(interval - shutter_length)
 		for i in range( 1 , v['Images'] + 1 ):
 			if busy == False:
 				break
