@@ -266,6 +266,8 @@ def timeLapse():
 	global currentrow
 	busy = True
 	for j in range(1, v['Rows'] + 1 ):
+		if busy == False:
+			break
 		currentrow = j
 		# disable the backlight, critical for night timelapses, also saves power
 		os.system("echo '0' > /sys/class/gpio/gpio252/value")
