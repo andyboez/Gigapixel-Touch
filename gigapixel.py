@@ -261,10 +261,10 @@ def timeLapse():
 	global backlightpin
 	global busy, threadExited
 	global currentframe
-
+	global motordirection
 	busy = True
 	for j in range(1, v['Rows'] + 1 ):
-		
+
 		for i in range( 1 , v['Images'] + 1 ):
 			if busy == False:
 				break
@@ -289,6 +289,10 @@ def timeLapse():
 		pulse=float(v['Pulse'])/1000.0
 		sleep(pulse)
 		gpio.digitalWrite(motorpinC, gpio.LOW)
+		if motorpin == motorpinA:
+			motorpin=motorpinB
+		elif motorpin == motorpinB
+			motorpin=motorpinA
 		
 	currentframe = 0
 	busy = False
