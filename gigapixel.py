@@ -291,7 +291,7 @@ def timeLapse():
 		gpio.digitalWrite(motorpinC, gpio.LOW)
 		if motorpin == motorpinA:
 			motorpin=motorpinB
-		elif motorpin == motorpinB
+		elif motorpin == motorpinB:
 			motorpin=motorpinA
 		
 	currentframe = 0
