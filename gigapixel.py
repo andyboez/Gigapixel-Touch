@@ -237,6 +237,7 @@ def doneCallback(): # Exit settings
 def startCallback(n): # start/Stop the timelapse thread
 	global t, busy, threadExited
 	global currentframe
+	global currentrow
 	if n == 1: 
 		if busy == False:
 			if (threadExited == True):
@@ -249,6 +250,7 @@ def startCallback(n): # start/Stop the timelapse thread
 			busy = False
 			t.join()
 			currentframe = 0
+			currentrow = 0
 			# Re-instanciate the object for the next time around.
 			t = threading.Thread(target=timeLapse)
 
