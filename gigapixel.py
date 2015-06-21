@@ -263,27 +263,33 @@ def timeLapse():
 	global currentframe
 
 	busy = True
-
-	for i in range( 1 , v['Images'] + 1 ):
-		if busy == False:
-			break
-		currentframe = i
-		gpio.digitalWrite(motorpin,gpio.HIGH)
-		pulse = float(v['Pulse'])/1000.0
+	for j in range(1, v['Rows'] + 1 ):
+		
+		for i in range( 1 , v['Images'] + 1 ):
+			if busy == False:
+				break
+			currentframe = i
+			gpio.digitalWrite(motorpin,gpio.HIGH)
+			pulse = float(v['Pulse'])/1000.0
+			sleep(pulse)
+			gpio.digitalWrite(motorpin,gpio.LOW)
+			sleep(settling_time)
+	
+			# disable the backlight, critical for night timelapses, also saves power
+			os.system("echo '0' > /sys/class/gpio/gpio252/value")
+			gpio.digitalWrite(shutterpin,gpio.HIGH)
+			sleep(shutter_length)
+			gpio.digitalWrite(shutterpin,gpio.LOW)
+			#  enable the backlight
+			os.system("echo '1' > /sys/class/gpio/gpio252/value")
+			interval = float(v['Interval'])/1000.0
+			if (interval > shutter_length):
+				sleep(interval - shutter_length)
+		gpio.digitalWrite(motorpinC, gpio.HIGH)
+		pulse=float(v['Pulse'])/1000.0
 		sleep(pulse)
-		gpio.digitalWrite(motorpin,gpio.LOW)
-		sleep(settling_time)
-
-		# disable the backlight, critical for night timelapses, also saves power
-		os.system("echo '0' > /sys/class/gpio/gpio252/value")
-		gpio.digitalWrite(shutterpin,gpio.HIGH)
-		sleep(shutter_length)
-		gpio.digitalWrite(shutterpin,gpio.LOW)
-		#  enable the backlight
-		os.system("echo '1' > /sys/class/gpio/gpio252/value")
-		interval = float(v['Interval'])/1000.0
-		if (interval > shutter_length):
-			sleep(interval - shutter_length)
+		gpio.digitalWrite(motorpinC, gpio.LOW)
+		
 	currentframe = 0
 	busy = False
 	threadExited = True
@@ -343,7 +349,7 @@ buttons = [
    Button((195,180,120, 60), bg='stop',  cb=startCallback, value=0)],
 
   # Screen 1 for changing values and setting motor direction
-	[Button((280,  0, 40, 40), bg='cogsmall',   cb=valuesCallback, value=1),
+  [Button((280,  0, 40, 40), bg='cogsmall',   cb=valuesCallback, value=1),
    Button((280, 40, 40, 40), bg='cogsmall',   cb=valuesCallback, value=2),
    Button((280,80, 40, 40), bg='cogsmall',   cb=valuesCallback, value=3),
    Button((280,120, 40, 40), bg='cogsmall',   cb=valuesCallback, value=5),
