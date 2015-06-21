@@ -309,6 +309,7 @@ def timeLapse():
 			motorpin=motorpinA
 		
 	currentframe = 0
+	currentrow = 0
 	busy = False
 	threadExited = True
 
