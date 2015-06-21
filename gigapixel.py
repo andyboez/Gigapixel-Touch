@@ -261,10 +261,10 @@ def timeLapse():
 	global backlightpin
 	global busy, threadExited
 	global currentframe
-	global motordirection
+	global currentrow
 	busy = True
 	for j in range(1, v['Rows'] + 1 ):
-
+		currentrow = j
 		for i in range( 1 , v['Images'] + 1 ):
 			if busy == False:
 				break
@@ -557,7 +557,7 @@ while(True):
     screen.blit(label, (160, 50))
     label = myfont.render(str(currentframe) + " of " + str(v['Images']) , 1, (255,255,255))
     screen.blit(label, (160, 90))
-    label = myfont.render(str(currentframe) + " of " + str(v['Rows']) , 1, (255,255,255))
+    label = myfont.render(str(currentrow) + " of " + str(v['Rows']) , 1, (255,255,255))
     screen.blit(label, (160, 130))
 
     #intervalLength = float((v['Pulse'] + v['Interval'] + (settling_time*1000) + (shutter_length*1000)))
